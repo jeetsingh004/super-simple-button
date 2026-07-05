@@ -1,16 +1,45 @@
 .counter {
+  color: #222;
+  justify-content: center;
   font-size: 16px;
   padding: 5px 10px;
-  border-radius: 10px;
-  color: var(--accent);
-  background: var(--accent-bg);
-  border: 2px solid;
+  border-radius: 8px;
+  font-weight: bold;
+  border: none;
   transition: border-color 0.3s;
-  margin-bottom: 24px;
-  width: 115px
+  background-color: #f0f0f0;
+  margin: 10px;
+  width: 70px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
 }
 
-.H1{
-
+.top-head {
+  color: aqua;
 }
+
+.counter:hover {
+  background-color: #99fb11;
+  transform: scale(1.05);
+}
+
+#min-btn:hover {
+  background-color: #fb2811;
+  transform: scale(1.05);
+}
+
+.counter:active {
+  transform: scale(0.97);
+}
+
+/* Media query: shrink buttons on smaller screens */
+@media (max-width: 480px) {
+  .counter {
+    width: 100px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
+
+
 

@@ -7,38 +7,37 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0)
 
+  function increment() {
+    if (count < 10) {
+      setCount(count + 1)
+    }
+  }
+
+  function decrement() {
+    if (count > 0) {
+      setCount(count - 1)
+    }
+  }
+
   return (
     <>
-      {/* <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button> */}
-
       <div>
-        <h1
-          className='H1'>
-          Count IS {count}
-        </h1>
+        <h1 className='top-head'>{count}</h1>
 
-        <button
-          type='button'
-          className='counter'
-          onClick={() => setCount(count + 1)}>
+        <button onClick={increment} className='counter'
+          type='button'>
           ADD
         </button>
-
-        <button
-          type='button'
-          className='counter'
-          onClick={() => setCount(count - 1)}>
+        <button onClick={decrement} className='counter'
+        id='min-btn'
+          type='button'>
           SUB
         </button>
 
-      </div>
+        {count === 10 && <p>Max reached!</p>}
+      {count === 0 && <p>Min reached!</p>}
 
+      </div>
     </>
   )
 }
