@@ -1,8 +1,6 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
 import './App.css'
+import NewBtn from './assets/newbtn'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -20,25 +18,21 @@ function App() {
   }
 
   return (
-    <>
-      <div>
+    <NewBtn>
+      <div className='app-wrapper'>
         <h1 className='top-head'>{count}</h1>
 
-        <button onClick={increment} className='counter'
-          type='button'>
+        <button onClick={increment} className='counter' type='button'>
           ADD
         </button>
-        <button onClick={decrement} className='counter'
-        id='min-btn'
-          type='button'>
+        <button onClick={decrement} className='counter' id='min-btn' type='button'>
           SUB
         </button>
 
         {count === 10 && <p>Max reached!</p>}
-      {count === 0 && <p>Min reached!</p>}
-
+        {count === 0 && <p>Min reached!</p>}
       </div>
-    </>
+    </NewBtn>
   )
 }
 
