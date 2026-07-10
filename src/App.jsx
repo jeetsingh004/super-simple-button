@@ -1,39 +1,23 @@
-import { useState } from 'react'
+// App.jsx
+import { HashRouter } from 'react-router-dom'
 import './App.css'
-import NewBtn from './assets/newbtn'
 
-function App() {
-  const [count, setCount] = useState(0)
+import Navigation from './components/Navigation.jsx'
+import Footer from './components/Footer.jsx'
+import AppRoutes from './components/AppRoutes.jsx'
 
-  function increment() {
-    if (count < 10) {
-      setCount(count + 1)
-    }
-  }
-
-  function decrement() {
-    if (count > 0) {
-      setCount(count - 1)
-    }
-  }
-
+export default function App() {
   return (
-    <NewBtn>
-      <div className='app-wrapper'>
-        <h1 className='top-head'>{count}</h1>
+    <HashRouter>
+      <div className="theme-light">{/* force light mode */}
+        <Navigation />
 
-        <button onClick={increment} className='counter' type='button'>
-          ADD
-        </button>
-        <button onClick={decrement} className='counter' id='min-btn' type='button'>
-          SUB
-        </button>
+        <main className="container main-content">
+          <AppRoutes />
+        </main>
 
-        {count === 10 && <p>Max reached!</p>}
-        {count === 0 && <p>Min reached!</p>}
+        <Footer />
       </div>
-    </NewBtn>
+    </HashRouter>
   )
 }
-
-export default App
