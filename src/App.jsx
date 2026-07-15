@@ -9,10 +9,10 @@ import AppRoutes from './components/AppRoutes.jsx'
 export default function App() {
   return (
     <HashRouter>
-      <div className="theme-light">{/* force light mode */}
+      <div className="theme-light min-h-screen bg-stone-50 text-slate-900">{/* force light mode */}
         <Navigation />
 
-        <main className="container main-content">
+        <main className="container main-content mx-auto flex-1 px-4 py-6 sm:px-6 lg:px-8">
           <AppRoutes />
         </main>
 

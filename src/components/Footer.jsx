@@ -8,7 +8,7 @@ const socialLinks = [
 
 function SocialIcon({ path }) {
   return (
-    <svg className="social-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden>
+    <svg className="h-4 w-4" viewBox="0 0 24 24" width="16" height="16" aria-hidden>
       <path fill="currentColor" d={path} />
     </svg>
   )
@@ -16,16 +16,16 @@ function SocialIcon({ path }) {
 
 export default function Footer() {
   return (
-    <footer className="footer">
-      <div className="container footer-row">
+    <footer className="mt-10 border-t border-stone-200/80 bg-white/70 py-6">
+      <div className="container flex flex-col items-center justify-between gap-4 text-center text-sm text-slate-500 sm:flex-row sm:text-left">
         <div>
           <small>© {new Date().getFullYear()} Fitpal.AI</small>
         </div>
-        <div className="social">
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:justify-end">
           {socialLinks.map(link => (
-            <a key={link.label} href={link.href} target="_blank" rel="noreferrer" aria-label={link.label}>
+            <a key={link.label} href={link.href} target="_blank" rel="noreferrer" aria-label={link.label} className="flex flex-col items-center gap-1 rounded-2xl border border-amber-100 bg-white/90 px-3 py-3 text-slate-600 transition hover:-translate-y-0.5 hover:border-amber-200 hover:text-slate-900">
               <SocialIcon path={link.path} />
-              <span>{link.label}</span>
+              <span className="text-[0.7rem]">{link.label}</span>
             </a>
           ))}
         </div>
